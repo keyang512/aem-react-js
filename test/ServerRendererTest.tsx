@@ -35,7 +35,7 @@ describe("ServerRenderer", () => {
             }
         } as RootComponentRegistry);
         let renderer: ServerRenderer = new ServerRenderer(registry, container);
-        let response: ServerResponse = renderer.renderReactComponent("/test", "/components/test", "disabled");
+        let response: ServerResponse = renderer.renderReactComponent("/test", "/components/test", "disabled", {'q': 'xero'});
 
         expect(response.html).to.equal('<span data-reactroot="" data-reactid="1" data-react-checksum="-1096281847">hi</span>');
 
@@ -52,7 +52,7 @@ describe("ServerRenderer", () => {
         let renderer: ServerRenderer = new ServerRenderer(registry, null);
         let error: boolean = false;
         try {
-            renderer.renderReactComponent("/test", "/components/test", "disabled");
+            renderer.renderReactComponent("/test", "/components/test", "disabled", {'q': 'xero'});
         } catch (e) {
             error = true;
         }

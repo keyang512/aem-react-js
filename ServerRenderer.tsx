@@ -27,7 +27,7 @@ export default class ServerRenderer {
      * @param props
      * @returns {string}
      */
-    public renderReactComponent(path: string, resourceType: string, wcmmode: string, renderRootDialog?: boolean): ServerResponse {
+    public renderReactComponent(path: string, resourceType: string, wcmmode: string, parameters: object, renderRootDialog?: boolean): ServerResponse {
 
         console.log("render react on path " + path);
         console.log("render react component " + resourceType);
